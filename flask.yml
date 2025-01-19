@@ -19,4 +19,4 @@
      state: present
 
   - name: Execute python script 
-    command: python3 app.py
+    command: python3 app.py &
