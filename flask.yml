@@ -1,0 +1,22 @@
+---
+- name: setup flask 
+  hosts: localhost
+  become: true 
+  
+  tasks: 
+  - name: Update package lists 
+    apt: 
+     update_cache: yes 
+
+  - name: Install pip3 
+    apt: name: 
+     python3-pip 
+     state: present 
+
+  - name: Install Flask 
+    pip: 
+     name: Flask 
+     state: present
+
+  - name: Execute python script 
+    Shell: script python3 app.py
